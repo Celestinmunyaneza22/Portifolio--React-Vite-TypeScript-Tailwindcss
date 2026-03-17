@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://munyanezacelestin22.vercel.app/sitemap.xml

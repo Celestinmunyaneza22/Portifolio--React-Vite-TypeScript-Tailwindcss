@@ -1,6 +1,6 @@
 import profile from "../assets/celestin.png";
 import { motion } from "framer-motion";
-
+import { TypeAnimation } from "react-type-animation";
 const Hero = () => {
   return (
     <section className="min-h-screen flex items-center bg-gray-900 pt-20">
@@ -32,11 +32,27 @@ const Hero = () => {
 
           {/* Description */}
           <p className="text-gray-100 text-lg sm:text-xl mb-6">
-            I build modern web applications using
+            I build scalable and user-friendly web applications that solve real-world problems.</p>
+            <motion.p
+  className="text-gray-100 text-sm sm:text-xl mb-6 max-w-md"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.8 }}
+>
+  My goal is to become a top-level and innovative full-stack developer, building impactful digital
+  solutions that improve people's lives and contribute to innovative tech ecosystems.
+</motion.p>
             <span className="font-semibold block sm:inline">
-              {" "}React | Node.js | Next.js | TypeScript
+              {" "}
+              <motion.div
+            className="bg-gray-900 text-gray-100 p-4 rounded-lg shadow-lg font-mono text-xl sm:text-sm"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.9 }}
+          >
+          Full Stack Developer | React/Typescript Specialist | Node.js Engineer
+          </motion.div>
             </span>
-          </p>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -45,7 +61,7 @@ const Hero = () => {
               href="#projects"
               className=" font-semibold px-6 py-3 bg-black text-white rounded hover:bg-gray-800 text-center"
             >
-              View Projects
+              Explore My Work
             </a>
 
             <a
@@ -60,59 +76,48 @@ const Hero = () => {
 
         </div>
 
-        {/* RIGHT COLUMN - ANIMATED CODE */}
-        <div className="relative space-y-4">
+        {/* RIGHT COLUMN - TYPING ANIMATION */}
+<div className="flex items-center justify-center">
 
-          {/* React Code */}
-          <motion.div
-            className="bg-gray-900 text-green-400 p-4 rounded-lg shadow-lg font-mono text-xs sm:text-sm"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
-          >
-{`const App = () => {
-  return <h1>Hello React</h1>
-}`}
-          </motion.div>
+  <motion.div
+    className="bg-gray-900 text-green-400 p-6 rounded-xl shadow-xl font-mono text-sm sm:text-base w-full max-w-md"
+    initial={{ opacity: 0, scale: 0.9 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.8 }}
+  >
+    <TypeAnimation
+      sequence={[
+        `> Building scalable and user-friendly web apps...`,
+        2000,
+        `> React | TypeScript | Next.js | Node.js`,
+        2000,
+        `> Clean code. Modern UI. Real impact.`,
+        2000,
+        `> Let's build something amazing `,
+        2000,
+        `> const App = () => {
+         return <h1>Hello React</h1>
+        }
+      type User = {
+        name: string
+        role: string
+        } 
+      export default function Home() {
+        return <div>Next.js Page</div>
+       } 
+      const express = require("express")
+       const app = express()
+       app.listen(3000)`,
+        2000,
+      ]}
+      wrapper="span"
+      speed={50}
+      repeat={Infinity}
+      cursor={true}
+    />
+  </motion.div>
 
-          {/* TypeScript Code */}
-          <motion.div
-            className="bg-gray-900 text-blue-400 p-4 rounded-lg shadow-lg font-mono text-xs sm:text-sm"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.6 }}
-          >
-{`type User = {
-  name: string
-  role: string
-}`}
-          </motion.div>
-
-          {/* Next.js Code */}
-          <motion.div
-            className="bg-gray-900 text-yellow-400 p-4 rounded-lg shadow-lg font-mono text-xs sm:text-sm"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.9 }}
-          >
-{`export default function Home() {
-  return <div>Next.js Page</div>
-}`}
-          </motion.div>
-
-          {/* Node.js Code */}
-          <motion.div
-            className="bg-gray-900 text-green-300 p-4 rounded-lg shadow-lg font-mono text-xs sm:text-sm"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.2 }}
-          >
-{`const express = require("express")
-const app = express()
-app.listen(3000)`}
-          </motion.div>
-
-        </div>
+</div>
 
       </div>
 
